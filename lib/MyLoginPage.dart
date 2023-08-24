@@ -20,9 +20,9 @@ class _MyLoginPageState extends State<MyLoginPage> {
 
   void snackBarInMyProject()
   {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content :Text("Login Sucessfull"),
-      duration: const Duration(seconds: 2),
+      duration: Duration(seconds: 2),
     ));
   }
 
@@ -43,7 +43,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
           snackBarInMyProject();
 
           Navigator.popUntil(context, (route) => route.isFirst);
-          Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context)=>const HomeFB()));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const HomeFB()));
         }
         on FirebaseException catch(ex)
         {
@@ -87,7 +87,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                   Navigator.pushReplacement(context,CupertinoPageRoute(builder: (context)=> const MySignUpPage()));
                 }),
 
-                CupertinoButton(child:const  Text("Users"), onPressed:(){Navigator.push(context, CupertinoPageRoute(builder: (context)=>UsersPage()));}),
+                CupertinoButton(child:const  Text("Users"), onPressed:(){Navigator.push(context, CupertinoPageRoute(builder: (context)=>const UsersPage()));}),
 
               ],
             ),)
