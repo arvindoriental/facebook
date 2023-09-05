@@ -15,12 +15,11 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "FB",
-      home: (FirebaseAuth.instance.currentUser != null) ? const HomeFB() : const MyLoginPage(),
-    );
+        debugShowCheckedModeBanner: false, title: "FB", home: (FirebaseAuth.instance.currentUser== null) ? const MyLoginPage() : const HomeFB());
   }
 }
